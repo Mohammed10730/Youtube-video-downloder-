@@ -58,7 +58,9 @@ layout.addWidget(input_field)
 layout.addWidget(button)
 layout.addWidget(debuging)
 
-print("This shit")
+print("What a good change")
+print("wow")
+print("that's soo goood")
 
 # 7. Show and run
 window.show()
