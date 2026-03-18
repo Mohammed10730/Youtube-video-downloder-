@@ -2,6 +2,7 @@
 import yt_dlp
 import sys
 
+# downloading video using yt-dlp
 def downloadUrl(url):
     ydl_opts = {
         'format': 'bestvideo[height<=1080]+bestaudio',
@@ -21,20 +22,16 @@ from PyQt5.QtWidgets import (
     QPushButton, QLabel, QLineEdit
 )
 
-# 1. Always create the app first
 app = QApplication(sys.argv)
 
-# 2. Create main window
 window = QMainWindow()
 window.setWindowTitle("Videos Downloader")
-window.setGeometry(100, 100, 400, 300)  # x, y, width, height
+window.setGeometry(100, 100, 400, 300) 
 
-# 3. Central widget + layout
 central = QWidget()
 window.setCentralWidget(central)
 layout = QVBoxLayout(central)
 
-# 4. Add widgets
 debuging = QLabel("", )
 debuging.setStyleSheet("font-size: 25px;")
 input_field = QLineEdit()
@@ -45,19 +42,17 @@ def OnClickDownload():
     inputtextnospace = input_field.text().replace(" ", "")
     debuging.setText("Downloading ...")
     if (downloadUrl(inputtextnospace) == True):
-        debuging.setText("Download complete! ✅")
+        debuging.setText("Download complete ✅")
         return
     else:
-        debuging.setText("Download failed. ❌")
+        debuging.setText("Download failed ❌")
         return
 
 button.clicked.connect(OnClickDownload)
 
-# layout.addWidget(label)
 layout.addWidget(input_field)
 layout.addWidget(button)
 layout.addWidget(debuging)
 
-# 7. Show and run
 window.show()
 sys.exit(app.exec_())
