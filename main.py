@@ -58,6 +58,8 @@ layout.addWidget(input_field)
 layout.addWidget(button)
 layout.addWidget(debuging)
 
+print("This shit")
+
 # 7. Show and run
 window.show()
 sys.exit(app.exec_())
